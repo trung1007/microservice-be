@@ -31,7 +31,7 @@ public class FormatResponse implements ResponseBodyAdvice<Object> {
             status = servletResponse.getServletResponse().getStatus();
         }
 
-        if(body instanceof String){
+        if (body instanceof ResponseDTO || body instanceof String) {
             return body;
         }
 

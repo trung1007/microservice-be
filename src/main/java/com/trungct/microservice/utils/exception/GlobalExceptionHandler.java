@@ -20,8 +20,11 @@ public class GlobalExceptionHandler {
             BadCredentialsException.class,
     })
     public ResponseEntity<ResponseDTO<Object>> handleException(Exception e) {
-       System.out.println(e);
-        return null;
+        ResponseDTO<Object> responseDTO = new ResponseDTO<>();
+        responseDTO.setStatusCode(HttpStatus.BAD_REQUEST.value());
+        responseDTO.setMessage("Exception occured...");
+        responseDTO.setError(e.getMessage());
+        return ResponseEntity.badRequest().body(responseDTO);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

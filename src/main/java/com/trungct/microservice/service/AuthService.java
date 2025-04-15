@@ -61,7 +61,7 @@ public class AuthService implements UserDetailsService {
                 .issuedAt(now)
                 .expiresAt(validity)
                 .subject(authentication.getName())
-                .claim("trungct1", authentication)
+                .claim("trungct", authentication)
                 .build();
 
         JwsHeader jwsHeader = JwsHeader.with(JWT_ALGORITHM).build();
