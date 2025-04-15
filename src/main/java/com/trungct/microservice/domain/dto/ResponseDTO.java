@@ -9,9 +9,6 @@ public class ResponseDTO<T> {
 
     private Object message;
 
-    private String accessToken;
-
-
     private T  data;
 
 }

@@ -28,7 +28,7 @@ public class UserController {
         return ResponseEntity.ok(userEntities);
     }
 
-    @PostMapping("/create")
+    @PostMapping("/register")
     public ResponseEntity<UserEntity> createUser(@RequestBody UserEntity userEntity) {
         String hashPassword = passwordEncoder.encode(userEntity.getPassword());
         userEntity.setPassword(hashPassword);

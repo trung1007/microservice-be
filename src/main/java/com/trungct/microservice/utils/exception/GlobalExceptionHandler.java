@@ -35,7 +35,7 @@ public class GlobalExceptionHandler {
         ResponseDTO<Object> responseDTO = new ResponseDTO<>();
         responseDTO.setStatusCode(HttpStatus.BAD_REQUEST.value());
         responseDTO.setError("Validation Failed");
-        responseDTO.setMessage(errors); // gửi tất cả lỗi theo field
+        responseDTO.setMessage(errors);
         responseDTO.setData(null);
 
         return ResponseEntity.badRequest().body(responseDTO);
